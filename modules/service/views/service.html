@@ -1,0 +1,33 @@
+<form class="form-horizontal" role="form" ng-submit="ctrl.saveData();" name="serviceFrm" id="serviceFrm" novalidate>
+    <div class="table-responsive">
+        <table  class="table table-condensed table-striped table-bordered" id="partialLineItemStatusChange">
+            <thead>
+            <tr>
+                <th sort-table svc-call="ctrl.getData(params)" order="url">URL</th>
+                <th translate>Create</th>
+                <th translate>Read</th>
+                <th translate>Update</th>
+                <th translate>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="row in ctrl.data">
+                <td>{{row.url}}</td>
+                <td><input class="checkbox-large" type="checkbox" ng-model="row.action.createAccess"></td>
+                <td><input class="checkbox-large" type="checkbox" ng-model="row.action.readAccess"></td>
+                <td><input class="checkbox-large" type="checkbox" ng-model="row.action.updateAccess"></td>
+                <td><input class="checkbox-large" type="checkbox" ng-model="row.action.deleteAccess"></td>
+            </tr>
+            </tbody>
+        </table>
+        <table-pagination total-hits="ctrl.totalHits" current-clicked-page="ctrl.currentPage"
+                          pagination-changed="ctrl.paginationChanged(newPage)">
+        </table-pagination>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4">
+            <back-button ui-sref="tmw.layout.credential({accountId: ctrl.credentialData['account'].id})"></back-button>
+            <save-button></save-button>
+        </div>
+    </div>
+</form>

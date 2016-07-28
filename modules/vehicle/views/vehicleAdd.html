@@ -1,0 +1,14 @@
+<form class="form-horizontal" role="form" ng-submit="ctrl.saveData(vehicleAddFrm);" name="vehicleAddFrm" id="vehicleAddFrm" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : vehicleAddFrm.description.$invalid && vehicleAddFrm.$submitted}">
+        <label class="control-label col-sm-2" for="description">{{"Description" | translate}}:</label>
+        <div class="col-sm-10">
+            <input type="text" auto-focus required class="form-control" id="description" name="description" ng-model="ctrl.frmData.description" placeholder="{{ 'Enter' | translate }} {{'Description' | translate}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-4">
+            <back-button ui-sref="tmw.layout.vehicle"></back-button>
+            <save-button></save-button>
+        </div>
+    </div>
+</form>

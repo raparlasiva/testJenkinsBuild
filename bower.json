@@ -1,0 +1,53 @@
+{
+  "name": "tmw-portal",
+  "version": "0.0.0",
+  "authors": [
+    "Siva Raparla <sraparla@tmwsystems.com>"
+  ],
+  "description": "tmw portal app",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "~1.4.7"
+  },
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.4.8",
+    "angular-bootstrap": "~0.14.3",
+    "font-awesome": "~4.4.0",
+    "angular-sanitize": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "lodash": "~3.10.1",
+    "angular-breadcrumb": "~0.4.1",
+    "angular-animate": "~1.4.8",
+    "checklist-model": "~0.6.0",
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1",
+    "bower": "*",
+    "install": "~1.0.4",
+    "flag-icon-css": "~1.0.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "1.4.7"
+  }
+}

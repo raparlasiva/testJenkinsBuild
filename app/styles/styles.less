@@ -1,0 +1,62 @@
+@import url('variables.less');
+
+body {
+  min-height: @bodyMinHeight;
+}
+.navbar-static-top {
+  margin-bottom: @navBarCustomMargin;
+}
+
+.portal-image-has-content {
+  color: @portal-image-has-content-color;
+}
+
+.portal-image-default {
+  color: @portal-image-default-color;
+}
+
+.login-background {
+  background: url('../images/login-bg.jpg') 0 0 no-repeat;
+  background-size: @login-background-image-size;
+  width: @login-background-image-size;
+  height: @login-background-image-vertical-size;
+}
+.checkbox-large {
+  width: @checkbox-large-width;
+  height: @checkbox-large-height;
+}
+
+.fixed-table {
+  table-layout: fixed;
+}
+
+.break-word {
+  word-wrap: break-word;
+}
+
+.table td {
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.table thead {
+  background-color: black;
+  color: white;
+}
+.cursor-pointer {
+  cursor:pointer
+}
+.nav-branding {
+  background: url('../images/TMW_Trimbled_white_sm.png') 0 0 no-repeat;
+  width: @nav-branding-image-width;
+  height: @nav-branding-image-height;
+}
+
+.input-group-addon{
+  min-width: @input-group-addon-width;
+  text-align: @input-group-addon-align;
+}
+.advertise{
+  color: @advertise-color !important;
+  text-decoration: underline;
+}

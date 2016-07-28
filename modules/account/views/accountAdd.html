@@ -1,0 +1,29 @@
+<div class="panel panel-info col-sm-6">
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" ng-submit="ctrl.saveData(accountAddFrm);" name="accountAddFrm" id="accountAddFrm" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : accountAddFrm.name.$invalid && accountAddFrm.$submitted}">
+                <label class="control-label col-sm-2" for="name">{{'Name' | translate}}:</label>
+                <div class="col-sm-10">
+                    <input auto-focus type="text" required class="form-control" id="name" name="name" ng-model="ctrl.account.name" placeholder="{{ 'Enter' | translate }} {{'Name' | translate}}">
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : accountAddFrm.type.$invalid && accountAddFrm.$submitted}">
+                <label class="control-label col-sm-2">{{'Type' | translate}}:</label>
+                <div class="col-sm-10">
+                    <label class="radio-inline">
+                        <input type="radio" name="type"  ng-model="ctrl.account.type" required  value="Customer">{{'Customer' | translate}}
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" ng-model="ctrl.account.type" required  value="Vendor">{{'Vendor' | translate}}
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
+                    <back-button ui-sref="tmw.layout.account"></back-button>
+                    <save-button></save-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

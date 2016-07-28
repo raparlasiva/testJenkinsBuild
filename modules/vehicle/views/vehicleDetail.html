@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class = "panel panel-primary">
+            <div class = "panel-heading">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-truck fa-stack-1x"></i>
+                    <i class="fa fa-square-o fa-stack-2x "></i>
+                </span>
+                {{"Vehicle" | translate}} {{"Information" | translate}}
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal has-success" role="form">
+                    <div class="input-group">
+                        <span class="input-group-addon ">{{"Id" | translate}}: </span>
+                        <input type="text" class="form-control"value="{{ctrl.data.id}}"/>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{"Description" | translate}}:</span>
+                        <input type="text" class="form-control"value="{{ctrl.data.description}}"/>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">{{"Owner" | translate}}:</span>
+                        <input type="text" class="form-control"value="{{ctrl.data.account.name}}"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class = "panel panel-primary">
+            <div class = "panel-heading">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-truck fa-stack-1x"></i>
+                    <i class="fa fa-square-o fa-stack-2x "></i>
+                </span>
+                {{"Additional" | translate}} {{"Details" | translate}}
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal has-success" role="form">
+                    <div ng-repeat="row in ctrl.data.sourceDataKeyValuePairs" class="input-group">
+                        <span class="input-group-addon ">{{row[0] | capitalizeFirstLetter | translate}}: </span>
+                        <input type="text" class="form-control"value="{{row[1]}}"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<back-button  ui-sref="tmw.layout.vehicle({accountId: ctrl.accountId})"></back-button>

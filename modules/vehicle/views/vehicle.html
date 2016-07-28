@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-sm-3">
+        <add-button click="ctrl.add()"></add-button>
+    </div>
+    <div class="col-sm-9">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                {{ctrl.data[0].account["name"] }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <th sort-table svc-call="ctrl.getData(params)" order="description">{{"Vehicle" | translate}} {{"Description" | translate}}</th>
+            <th translate>Fault</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in ctrl.data">
+                <td><a class="anchor-normal" ui-sref="tmw.layout.vehicle.detail({vehicleId:row.id})">{{row.description}}</a></td>
+                <td><a class="anchor-normal" ui-sref="tmw.layout.fault({vehicleId: row.id, accountId: row.account.id})"><i class="fa fa-wrench"></i></a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table-pagination total-hits="ctrl.totalHits" current-clicked-page="ctrl.currentPage"
+                          pagination-changed="ctrl.paginationChanged(newPage)">
+        </table-pagination>
+
+    </div>
+</div>
+
+
+
+
+

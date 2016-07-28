@@ -1,0 +1,19 @@
+{
+  "extends": "eslint:recommended",
+  "globals": {
+    "_": true,
+    "angular": true
+  },
+  "rules" : {
+    "global-strict": 0,
+    "quotes": [2, "single", "avoid-escape"],
+    "space-in-parens": [2, "never"],
+    "space-before-function-paren": [2, "never"],
+    "strict": [2, "global"],
+    "brace-style": 2,
+    "indent": [2, 4, {"SwitchCase": 1}],
+    "eol-last": 2,
+    "no-undef": 2,
+    "max-len":[2,120,4]
+  }
+}

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-12">
+        <add-button click="ctrl.add()"></add-button>
+    </div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th sort-table svc-call="ctrl.getData(params)" order="id">{{'Id' | translate}}</th>
+                    <th sort-table svc-call="ctrl.getData(params)" order="name">{{'Name' | translate}}</th>
+                    <th sort-table svc-call="ctrl.getData(params)" order="type">{{'Type' | translate}}</th>
+                    <th>{{'Vehicles' | translate}}</th>
+                    <th>{{'Interfaces' | translate}}</th>
+                    <th>{{'Api Credentials' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in ctrl.data">
+                    <td>{{row.id}}</td>
+                    <td>{{row.name}}</td>
+                    <td translate>{{row.type}}</td>
+                    <td>
+                        <a ng-show="row.id > 0" ng-class="row.totalAssets > 0 ? 'portal-image-has-content' : 'portal-image-default'"
+                           ui-sref="tmw.layout.vehicle({accountId: row.id})">  <i class="fa fa-truck"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a ng-show="row.id > 0" ng-class="row.totalExternalInterfaces > 0 ? 'portal-image-has-content' :'portal-image-default'"
+                           ui-sref="tmw.layout.externalInterface({accountId: row.id, accountData: row})">  <i class="fa fa-external-link"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a ng-class="row.totalCredentials > 0 ? 'portal-image-has-content' :'portal-image-default'"
+                           ui-sref="tmw.layout.credential({accountId: row.id, accountData: row})">  <i class="fa fa-user"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table-pagination total-hits="ctrl.totalHits" current-clicked-page="ctrl.currentPage"
+                          pagination-changed="ctrl.paginationChanged(newPage)">
+        </table-pagination>
+
+    </div>
+</div>
