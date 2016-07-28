@@ -8,8 +8,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start",
     "start": "node server/serverApp.js",
+    "lint": "gulp lint",
     "postinstall": "node ./node_modules/protractor/bin/webdriver-manager update"
   },
   "author": "Siva Raparla",
@@ -46,8 +47,11 @@
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.8",
     "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-cli": "^1.0.1",
     "karma-coverage": "^0.5.0",
     "karma-jasmine": "^0.3.6",
+    "karma-junit-reporter": "^1.1.0",
     "karma-mocha": "^0.2.0",
     "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-phantomjs-launcher": "^0.2.1",
@@ -76,6 +80,15 @@
     "morgan": "^1.6.1",
     "sinon": "^1.17.3",
     "url": "^0.10.3",
-    "yargs": "^3.32.0"
+    "yargs": "^3.32.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-cli": "^1.0.1",
+    "karma-coverage": "^0.5.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-junit-reporter": "^1.1.0",
+    "phantomjs": "^1.9.17",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "eslint": "^1.2.1"
+
   }
 }
